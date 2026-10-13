@@ -518,6 +518,11 @@ h1 em { display: block; color: #d95700; font-style: normal; }
   .hero { min-height: 760px; }
 }
 
+/* Desktop: desloca o formulario 96px a direita (afasta da copy) */
+@media (min-width: 1101px) {
+  .hero .form-card { transform: translateX(96px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button, .mobile-cta { transition: none; }
