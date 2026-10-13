@@ -17,7 +17,6 @@
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <link rel="preload" href="assets/hero-video-poster.webp?v=2" as="image" type="image/webp" />
     <link rel="preload" href="assets/ratoeira-mark.png" as="image" />
     <link rel="preload" href="assets/inter-extra-bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="styles.css?v=18" />
@@ -80,25 +79,11 @@
               <span class="hero-title__line"><em>dinheiro de volta.</em></span>
             </h1>
             <p class="hero__lead">A gente garante isso no painel da Ratoeira. E te dá 3 meses pra cobrar.</p>
-            <p class="hero__description">No dia 29 de Outubro eu abro todas as ofertas ao vivo, <strong>com preços menores que os da própria Black November.</strong></p>
             <a class="button button--primary" href="#oferta" data-track="hero-cta">Garantir meu acesso antecipado</a>
             <p class="hero__microcopy">Gratuito. O link da live vai só para quem estiver na lista.</p>
           </div>
 
-          <div class="video-card">
-            <video controls autoplay muted playsinline preload="auto" poster="assets/hero-video-poster.webp?v=2" aria-label="Vídeo sobre a garantia de trackeamento da Ratoeira">
-              <source src="assets/hero-video.mp4" type="video/mp4" />
-              Seu navegador não suporta a reprodução deste vídeo.
-            </video>
-          </div>
-        </div>
-      </section>
-
-      <section class="offer" id="oferta" aria-labelledby="offer-title">
-        <div class="offer__bg" aria-hidden="true">
-          <canvas id="offer-scanner"></canvas>
-        </div>
-        <div class="form-card">
+          <div class="form-card" id="oferta">
           <p class="form-card__badge">A garantia de 90% no painel da Ratoeira e todas as ofertas abrem dia 29, às 19h30, só para quem estiver na lista</p>
           <h2 id="offer-title">Garanta seu acesso antecipado ao dia 29</h2>
           <p class="form-card__intro">19h30, ao vivo. Leva menos de um minuto pra garantir o link.</p>
@@ -179,6 +164,7 @@
               <span class="privacy-note__terms">Garantia de Trackeamento 90%: <a href="/termo-garantia" target="_blank" rel="noopener noreferrer">condições no <span class="privacy-note__terms-title">Termo da Garantia</span></a></span>
             </p>
           </form>
+          </div>
         </div>
       </section>
 
