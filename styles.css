@@ -125,7 +125,7 @@ img, svg { display: block; }
 }
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(400px, 520px);
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 620px);
   gap: clamp(70px, 9vw, 140px);
   align-items: center;
   min-height: 700px;
@@ -514,13 +514,18 @@ h1 em { display: block; color: #d95700; font-style: normal; }
 
 @media (min-width: 1680px) {
   :root { --container: 1280px; }
-  .hero__grid { grid-template-columns: minmax(0, 1fr) 560px; min-height: 760px; }
+  .hero__grid { grid-template-columns: minmax(0, 1fr) 660px; min-height: 760px; }
   .hero { min-height: 760px; }
 }
 
-/* Desktop: desloca o formulario 96px a direita (afasta da copy) */
-@media (min-width: 1101px) {
+/* Desktop: abre a hero para os lados — copy a esquerda, formulario a direita */
+@media (min-width: 1400px) {
   .hero .form-card { transform: translateX(96px); }
+}
+@media (min-width: 1680px) {
+  .hero .hero__copy { margin-left: -96px; }
+  .hero .form-card { transform: translateX(196px); }
+  .hero .brand { left: max(24px, calc((100% - var(--container)) / 2 - 96px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
