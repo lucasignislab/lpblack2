@@ -128,6 +128,8 @@ form?.addEventListener("submit", (event) => {
   UTM_KEYS.forEach((key) => {
     if (utms[key]) qualificationParams.set(key, utms[key]);
   });
+  qualificationParams.set("email", form.elements.namedItem("email")?.value || "");
+  qualificationParams.set("whatsapp", (ddiSelect?.value || "+55") + " " + (phoneInput?.value || ""));
   const qualificationUrl = new URL("/qualificacao", SITE_ORIGIN);
   qualificationUrl.search = qualificationParams.toString();
   trackEvent("lead_form_submit", {
@@ -151,6 +153,12 @@ form?.addEventListener("submit", (event) => {
 
   // Registra o lead sem permitir que uma falha do endpoint interrompa o fluxo.
   event.preventDefault();
+
+  // Chrome/Android preenche o honeypot com o e-mail do usuário; limpa quando coincide.
+  const hp = form.elements.namedItem("website");
+  const em = form.elements.namedItem("email");
+
+  if (hp && em && hp.value.trim().toLowerCase() === em.value.trim().toLowerCase()) hp.value = "";
 
   fetch(form.dataset.webhook || form.action, {
     method: "POST",
